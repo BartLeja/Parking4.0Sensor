@@ -25,7 +25,6 @@ namespace Parking4._0Sensor
                         Date = DateTime.Now,
                         Status = ParkingStateService.GetInstance().ToogleParkingSpotStatus(),
                         Id = ParkingStateService.GetInstance().GetId()
-
                     });
 
             }

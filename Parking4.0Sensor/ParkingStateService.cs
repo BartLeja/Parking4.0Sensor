@@ -4,7 +4,7 @@ namespace Parking4._0Sensor
 {
     public class ParkingStateService
     {
-        public string LocalMachineUrl { get; set; } = "https://localhost:5001/parking/api";
+        public string LocalMachineUrl { get; set; } = "http://192.168.1.108:5000/api/parking";
         private ParkingStateService() {
             _id = Guid.NewGuid();
         }

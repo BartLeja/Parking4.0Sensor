@@ -10,7 +10,11 @@ namespace Parking4._0Sensor
 
         public static async Task SendParkingSpaceStatus(ParkingSpotDto parkingSpotDto)
         {
-            using (var client = new HttpClient())
+            //Fix for problems with SSL
+            HttpClientHandler clientHandler = new HttpClientHandler();
+            clientHandler.ServerCertificateCustomValidationCallback = (sender, cert, chain, sslPolicyErrors) => { return true; };
+           
+            using (var client = new HttpClient(clientHandler))
             {
                 try
                 {
